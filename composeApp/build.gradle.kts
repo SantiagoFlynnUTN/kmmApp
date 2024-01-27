@@ -44,6 +44,8 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             implementation(projects.shared)
+            implementation(libs.ktor.logging)
+            implementation("co.touchlab:kermit:2.0.2")
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -83,6 +85,9 @@ android {
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
     }
+}
+dependencies {
+    implementation("androidx.core:core-ktx:+")
 }
 
 compose.desktop {

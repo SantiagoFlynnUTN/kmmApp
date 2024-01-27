@@ -12,15 +12,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import co.touchlab.kermit.Logger
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
-
-    testFun()
-
     MaterialTheme {
         var greetingText by remember { mutableStateOf("Hello World!") }
         var showImage by remember { mutableStateOf(false) }
@@ -34,13 +32,13 @@ fun App() {
             AnimatedVisibility(showImage) {
                 Image(
                     painterResource("compose-multiplatform.xml"),
-                    null
+                    null,
                 )
             }
         }
     }
 }
 
-fun testFun() {
-    Log.v("LOG TAG")
+fun print(string: String) {
+    Logger.v(string, null, "LOG TAG VIDEO")
 }
